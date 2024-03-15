@@ -1,0 +1,37 @@
+<form method="post" action="R_N_User.html">
+<h1>Registro de nuevo usuario</h1>
+<label>Usuario:</label>
+<br>
+<input type="text" id ="Usuario" name="Usuario"required>
+<br>
+<label>Password:</label>
+<br>
+<input type="text" id="Password" name="Password" placeholder="Clave"required>
+<br>
+<label>Email:</label>
+<br>
+<input type="email" id="Email" name="Email" placeholder="Correo electronico"required>
+<br>
+<label>Nombres:</label>
+<br>
+<input type="text" id="Nombres" name="Nombres"required>
+<br>
+<label>Apellidos:</label>
+<br>
+<input type="text" id="Apellidos" name="Apellidos" required>
+<br>
+<label>Direccion:</label>
+<br>
+<textarea name="contenido cols="25" rows="6" placeholder="Por Ejemplo: Calle 11 Sur N-23">
+</textarea>
+<br>
+<label>Pais de residencia:</label>
+<br>
+<input type="text" id="residencia" name="Residencia"required>
+<br>
+<label>Telefo/Celular:</label>
+<br>
+<input type="number" id="numero" name="numero" placeholder="57+">
+<input type="submit" value="Enviar">
+<input type="submit" value="Borrar Todo">
+</form>

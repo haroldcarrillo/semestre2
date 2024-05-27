@@ -1,0 +1,37 @@
+<script>
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío del formulario estándar
+
+    const formData = new FormData(this); // Obtener los datos del formulario
+
+    fetch('Buscar.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Limpiar la tabla
+        const table = document.getElementById('resultTable');
+        table.innerHTML = `
+            <tr>
+                <td>Cod</td>
+                <td>Nombre Proyecto</td>
+                <td>Nombre Dueño</td>
+                <td>Celular</td>
+                <td>Correo</td>
+                <td>Facultad</td>
+            </tr>
+        `;
+
+        // Insertar las nuevas filas
+        data.forEach(row => {
+            const newRow = table.insertRow();
+            Object.values(row).forEach(text => {
+                const cell = newRow.insertCell();
+                cell.textContent = text;
+            });
+        });
+    })
+    .catch(error => console.error('Error:', error));
+});
+</script>
